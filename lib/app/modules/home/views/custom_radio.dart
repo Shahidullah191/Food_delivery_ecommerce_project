@@ -8,7 +8,7 @@ class MyRadioOption<T> extends StatelessWidget {
   final String text;
   final ValueChanged<T?> onChanged;
 
-  const MyRadioOption({
+  const MyRadioOption({super.key, 
     required this.value,
     required this.groupValue,
     required this.label,
@@ -23,7 +23,7 @@ class MyRadioOption<T> extends StatelessWidget {
       width: 30,
       height: 30,
       decoration: ShapeDecoration(
-        shape: CircleBorder(
+        shape: const CircleBorder(
           side: BorderSide(
             color: Colors.black,
           ),
@@ -32,7 +32,7 @@ class MyRadioOption<T> extends StatelessWidget {
       ),
       child: Center(
         child: isSelected
-            ? Icon(
+            ? const Icon(
           Icons.check,
           color: Colors.red,
         )
@@ -51,12 +51,12 @@ class MyRadioOption<T> extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.all(8),
+      margin: const EdgeInsets.all(8),
       child: InkWell(
         onTap: () => onChanged(value),
         splashColor: Colors.cyan.withOpacity(0.5),
         child: Padding(
-          padding: EdgeInsets.all(5),
+          padding: const EdgeInsets.all(5),
           child: Row(
             children: [
               _buildLabel(),
